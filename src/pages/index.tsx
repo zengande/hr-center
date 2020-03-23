@@ -118,7 +118,7 @@ export default () => {
           </div>
         </div>
 
-        <div style={{ marginTop: "20px", clear:'both' }}>
+        <div style={{ marginTop: "20px", clear: 'both' }}>
           <Row gutter={20}>
             <Col span={6}><Card bordered={false}>
               <h3>近7日简历处理率</h3>
@@ -152,22 +152,27 @@ interface ICalendarProps {
   data?: Array<{ key: string, value: number }>
 }
 interface ICalendarState {
-  selectedDate?: moment.Moment
+  selectedDate?: moment.Moment;
+  displayDate?: moment.Moment;
 }
 class Calendar extends React.PureComponent<ICalendarProps, ICalendarState> {
 
   constructor(props: ICalendarProps) {
     super(props);
+    const now = moment();
     this.state = {
-      selectedDate: moment()
+      selectedDate: now
     }
   }
 
   render() {
+    const { displayDate } = this.state;
     return (
       <ACalendar locale={zhCN}
         fullscreen={false}
+        value={displayDate}
         onSelect={date => this.onSelect(date)}
+        headerRender={config => this.renderHeader(config)}
         dateFullCellRender={date => this.renderCell(date)} />
     )
   }
@@ -183,6 +188,13 @@ class Calendar extends React.PureComponent<ICalendarProps, ICalendarState> {
         {date.date()}
         {value > 0 && (<span className={styles.num}>{value}</span>)}
       </div>
+    )
+  }
+
+  renderHeader(config: { value: moment.Moment, type: string, onChange: (date: moment.Moment) => void }) {
+    console.log(config);
+    return (
+      <div className={styles.calender_header}></div>
     )
   }
 

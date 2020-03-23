@@ -169,11 +169,18 @@
   }
 }
 
+.calender_header {
+  height: 37px;
+  background-color: red;
+}
+
 .cell {
   height       : 40;
   width        : 40px;
   line-height  : 40px;
   border-radius: 3px;
+  box-sizing   : border-box;
+  border       : 1px solid transparent;
   transition   : all ease-out .2s;
   position     : relative;
 
@@ -186,8 +193,9 @@
   }
 
   &.today {
-    color      : @primaryColor;
-    font-weight: bold;
+    border-color: @primaryColor;
+    color       : @primaryColor;
+    font-weight : bold;
   }
 
   &.selected {
