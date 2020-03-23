@@ -29,6 +29,7 @@
     "yorkie": "^2.0.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@umijs/preset-ui": "^2.0.10"
   }
 }

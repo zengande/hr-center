@@ -30,7 +30,7 @@ export default class GlobalHeader extends React.PureComponent {
         return (
 
             <Header className={styles.container}>
-                <div className={styles.logo}>LOGO</div>
+                <div className={styles.logo}/>
                 <Menu
                     theme="dark"
                     mode="horizontal"
