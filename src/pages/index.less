@@ -73,7 +73,7 @@
       .card {
         display : inline-block;
         width   : 25%;
-        padding : 20px;
+        padding : 24px;
         position: relative;
         height  : 122px;
         clear   : both;
@@ -158,12 +158,62 @@
 
         .list {
           height    : 345px;
-          overflow-y: hidden;
+          overflow-y: auto;
 
-          &:hover {
-            overflow-y: auto;
+          .item {
+            .item_time {
+              margin-bottom: 0px;
+              color        : @titleColor;
+              font-size    : .95rem;
+            }
+
+            .item_content {
+              margin-left  : 40px;
+              margin-bottom: 15px;
+
+              .content_avatar {
+                width       : 32px;
+                height      : 32px;
+                margin-right: 10px;
+              }
+
+              .content_name {
+                font-weight : bold;
+                color       : @titleColor;
+                margin-right: 5px;
+              }
+
+              .content_title {
+                color: @contentColor;
+              }
+
+              .content_message {
+                float: right;
+              }
+            }
           }
         }
+      }
+    }
+
+    .footer_card {
+      h3 {
+        color: @titleColor;
+        font-size: .9rem;
+        margin-bottom: 0px;
+      }
+
+      b {
+        font-size: 1.5rem;
+      }
+      .unit{
+        font-size: .85rem;
+        margin-left: 2px;
+        color: @titleColor;
+      }
+      p{
+        margin-bottom: 0px;
+        color: @contentColor;
       }
     }
   }
@@ -171,7 +221,11 @@
 
 .calender_header {
   height: 37px;
-  background-color: red;
+
+  .today {
+    float: right;
+
+  }
 }
 
 .cell {

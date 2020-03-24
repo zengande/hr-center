@@ -29,18 +29,20 @@ export default class GlobalHeader extends React.PureComponent {
     render() {
         return (
 
-            <Header className={styles.container}>
-                <div className={styles.logo}/>
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={['/']}
-                    style={{ lineHeight: '64px' }}
-                >
-                    {menus.map((item, index) => (
-                        <Menu.Item key={item.href}><Link to={item.href}>{item.text}</Link></Menu.Item>
-                    ))}
-                </Menu>
+            <Header>
+                <div className={styles.container}>
+                    <div className={styles.logo} />
+                    <Menu
+                        theme="dark"
+                        mode="horizontal"
+                        defaultSelectedKeys={['/']}
+                        style={{ lineHeight: '64px' }}
+                    >
+                        {menus.map((item, index) => (
+                            <Menu.Item key={item.href}><Link to={item.href}>{item.text}</Link></Menu.Item>
+                        ))}
+                    </Menu>
+                </div>
             </Header >
         )
     }

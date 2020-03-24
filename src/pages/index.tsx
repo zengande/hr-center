@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.less';
-import { Button, Calendar as ACalendar, Row, Col, Card } from 'antd'
-import { SendOutlined, ContactsOutlined } from '@ant-design/icons';
+import { Button, Calendar as ACalendar, Row, Col, Card, Avatar, Badge } from 'antd'
+import { SendOutlined, ContactsOutlined, LeftOutlined, RightOutlined, UserOutlined, MessageOutlined } from '@ant-design/icons';
 import zhCN from 'antd/lib/calendar/locale/zh_CN';
 import moment from 'moment';
 import classNames from 'classnames'
@@ -85,61 +85,107 @@ export default () => {
         </div>
         <div className={styles.main}>
           <div className={styles.content}>
-            <Calendar data={[{ key: '2020/03/23', value: 5 }, { key: '2020/03/10', value: 8 }]} />
+            <Calendar data={[{ key: '2020/03/23', value: 5 }, { key: moment().format(), value: 8 }, { key: '2020/03/10', value: 8 }]} onSelect={date => console.log(date)} />
           </div>
           <div className={styles.content}>
             <h2 className={styles.title}>当日面试安排<span className='text-highlight'>8</span>场</h2>
             <div className={styles.list}>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
+              <div className={styles.item}>
+                <p className={styles.item_time}>10:00</p>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />
+                </div>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />
+                </div>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<Badge dot><MessageOutlined /></Badge>} />
+                </div>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<Badge dot><MessageOutlined /></Badge>} />
+                </div>
+              </div>
+              <div className={styles.item}>
+                <p className={styles.item_time}>14:00</p>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />
+                </div>
+              </div>
+              <div className={styles.item}>
+                <p className={styles.item_time}>14:30</p>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />
+                </div>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<Badge dot><MessageOutlined /></Badge>} />
+                </div>
+              </div>
+              <div className={styles.item}>
+                <p className={styles.item_time}>16:00</p>
+                <div className={styles.item_content}>
+                  <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                  <b className={styles.content_name}>张三</b>
+                  <span className={styles.content_title}>前端工程师</span>
+                  <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div style={{ marginTop: "20px", clear: 'both' }}>
           <Row gutter={20}>
-            <Col span={6}><Card bordered={false}>
-              <h3>近7日简历处理率</h3>
-              <b>97%</b>
-              <p>全平台平均值 73%</p>
-            </Card></Col>
-            <Col span={6}><Card bordered={false}>
-              <h3>近7日简历处理率</h3>
-              <b>97%</b>
-              <p>全平台平均值 73%</p>
-            </Card></Col>
-            <Col span={6}><Card bordered={false}>
-              <h3>近7日简历处理率</h3>
-              <b>97%</b>
-              <p>全平台平均值 73%</p>
-            </Card></Col>
-            <Col span={6}><Card bordered={false}>
-              <h3>近7日简历处理率</h3>
-              <b>97%</b>
-              <p>全平台平均值 73%</p>
-            </Card></Col>
+            <Col span={6}>
+              <Card className={styles.footer_card} bordered={false}>
+                <h3>近7日简历处理率</h3>
+                <b>97%</b>
+                <p>全平台平均值 73%</p>
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card className={styles.footer_card} bordered={false}>
+                <h3>近7日平均处理时间</h3>
+                <b>0.8</b>
+                <span className={styles.unit}>天</span>
+                <p>全平台平均值 1.2天</p>
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card className={styles.footer_card} bordered={false}>
+                <h3>近7日通知反馈率</h3>
+                <b>38%</b>
+                <p>全平台平均值 65%</p>
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card className={styles.footer_card} bordered={false}>
+                <h3>近7日平均反馈时间</h3>
+                <b>2.3</b>
+                <span className={styles.unit}>天</span>
+                <p>全平台平均值 6.3天</p>
+              </Card>
+            </Col>
           </Row>
         </div>
       </div>
@@ -161,7 +207,8 @@ class Calendar extends React.PureComponent<ICalendarProps, ICalendarState> {
     super(props);
     const now = moment();
     this.state = {
-      selectedDate: now
+      selectedDate: now,
+      displayDate: now
     }
   }
 
@@ -192,10 +239,23 @@ class Calendar extends React.PureComponent<ICalendarProps, ICalendarState> {
   }
 
   renderHeader(config: { value: moment.Moment, type: string, onChange: (date: moment.Moment) => void }) {
-    console.log(config);
+    const { value, onChange } = config;
+    const { displayDate } = this.state;
+
     return (
-      <div className={styles.calender_header}></div>
+      <div className={styles.calender_header}>
+        <Button type="link" icon={<LeftOutlined />} onClick={() => this.setDisplayDate(value.clone().add(-1, "M"), onChange)} />
+        <b>{value.format('YYYY年MM月')}</b>
+        <Button type="link" icon={<RightOutlined />} onClick={() => this.setDisplayDate(value.clone().add(1, "M"), onChange)} />
+        {!moment().isSame(displayDate, "d") && <Button type="link" className={styles.today} onClick={() => this.setDisplayDate(moment(), onChange)}>今天</Button>}
+
+      </div>
     )
+  }
+
+  setDisplayDate(date: moment.Moment, onChange: (date: moment.Moment) => void) {
+    this.setState({ displayDate: date });
+    onChange(date);
   }
 
   getValue(date: moment.Moment) {
@@ -217,7 +277,7 @@ class Calendar extends React.PureComponent<ICalendarProps, ICalendarState> {
   }
 
   onSelect(date: moment.Moment) {
-    this.setState({ selectedDate: date })
+    this.setState({ selectedDate: date, displayDate: date })
     const { onSelect } = this.props;
     onSelect && onSelect(date);
   }
