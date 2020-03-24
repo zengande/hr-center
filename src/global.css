@@ -14,7 +14,13 @@ body {
     background: #fafafa;
 }
 
-.text-highlight{
-    color: #216AFF;
+.text-highlight {
+    color  : #216AFF;
     padding: 0px 2px;
+}
+
+.loading {
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
 }

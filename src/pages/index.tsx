@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.less';
-import { Button, Row, Col, Card } from 'antd'
+import { Button, Row, Col, Card, Spin, Skeleton } from 'antd'
 import { SendOutlined, ContactsOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import { IndexModelState } from 'umi';
@@ -11,7 +11,9 @@ import InterviewList from './components/index/interview-list';
 
 interface IndexProps extends DispatchProp {
   calendar?: CalendarModel[];
-  interviewList?: InterviewModel
+  interviewList?: InterviewModel;
+  calendarLoading?: boolean;
+  interviewListLoading?: boolean;
 }
 
 interface IndexState {
@@ -31,7 +33,7 @@ class Index extends React.PureComponent<IndexProps, IndexState> {
   }
 
   render() {
-    const { calendar = [], interviewList } = this.props;
+    const { calendar = [], interviewList, calendarLoading, interviewListLoading } = this.props;
 
     const calendarDate = calendar.map(item => ({
       date: item.date,
@@ -115,10 +117,14 @@ class Index extends React.PureComponent<IndexProps, IndexState> {
           </div>
           <div className={styles.main}>
             <div className={styles.content}>
-              <Calendar data={calendarDate} onSelect={date => this.fetchList(date.format('YYYY/MM/DD'))} />
+              <Spin tip="正在获取日程" spinning={calendarLoading}>
+                <Calendar data={calendarDate} onSelect={date => this.fetchList(date.format('YYYY/MM/DD'))} />
+              </Spin>
             </div>
             <div className={styles.content}>
-              <InterviewList data={interviewList} />
+              <Skeleton loading={interviewListLoading || calendarLoading} active paragraph={{ rows: 5, width: '100%' }} >
+                <InterviewList data={interviewList} />
+              </Skeleton>
             </div>
           </div>
           <div style={{ marginTop: "20px", clear: 'both' }}>
@@ -161,7 +167,9 @@ class Index extends React.PureComponent<IndexProps, IndexState> {
   }
 }
 
-export default connect(({ index }: { index: IndexModelState }) => ({
+export default connect(({ index, loading }: { loading: any, index: IndexModelState }) => ({
   calendar: index.calendar,
-  interviewList: index.interviewList
+  interviewList: index.interviewList,
+  calendarLoading: loading.effects['index/fetchCalendar'],
+  interviewListLoading: loading.effects['index/fetchInterviewList'],
 }))(Index)

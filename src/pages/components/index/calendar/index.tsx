@@ -34,7 +34,7 @@ export default class Calendar extends React.PureComponent<ICalendarProps, ICalen
                 value={displayDate}
                 onSelect={date => this.onSelect(date)}
                 headerRender={config => this.renderHeader(config)}
-                dateFullCellRender={date => this.renderCell(date)} />
+                dateFullCellRender={date => this.renderCell(date)}/>
         )
     }
 
@@ -58,9 +58,9 @@ export default class Calendar extends React.PureComponent<ICalendarProps, ICalen
 
         return (
             <div className={styles.calender_header}>
-                <Button type="link" icon={<LeftOutlined />} onClick={() => this.setDisplayDate(value.clone().add(-1, "M"), onChange)} />
+                <Button type="link" className={styles.calender_btn} icon={<LeftOutlined />} onClick={() => this.setDisplayDate(value.clone().add(-1, "M"), onChange)} />
                 <b>{value.format('YYYY年MM月')}</b>
-                <Button type="link" icon={<RightOutlined />} onClick={() => this.setDisplayDate(value.clone().add(1, "M"), onChange)} />
+                <Button type="link" className={styles.calender_btn} icon={<RightOutlined />} onClick={() => this.setDisplayDate(value.clone().add(1, "M"), onChange)} />
                 {!moment().isSame(displayDate, "d") && <Button type="link" className={styles.today} onClick={() => this.setDisplayDate(moment(), onChange)}>今天</Button>}
 
             </div>

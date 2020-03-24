@@ -95,7 +95,7 @@
 
         .card_tip {
           margin       : 0px;
-          color        : @tipColor;
+          color        : @contentColor;
           margin-bottom: 15px;
         }
 
@@ -198,22 +198,24 @@
 
     .footer_card {
       h3 {
-        color: @titleColor;
-        font-size: .9rem;
+        color        : @titleColor;
+        font-size    : .9rem;
         margin-bottom: 0px;
       }
 
       b {
         font-size: 1.5rem;
       }
-      .unit{
-        font-size: .85rem;
+
+      .unit {
+        font-size  : .85rem;
         margin-left: 2px;
-        color: @titleColor;
+        color      : @titleColor;
       }
-      p{
+
+      p {
         margin-bottom: 0px;
-        color: @contentColor;
+        color        : @contentColor;
       }
     }
   }
@@ -222,14 +224,22 @@
 .calender_header {
   height: 37px;
 
-  .today {
-    float: right;
+  .calender_btn{
+    color: @contentColor;
 
+    &:hover{
+      color: @primaryColor;
+    }
+  }
+
+  .today {
+    float    : right;
+    font-size: .85rem;
   }
 }
 
 .cell {
-  height       : 40;
+  height       : 42;
   width        : 40px;
   line-height  : 40px;
   border-radius: 3px;
@@ -237,6 +247,7 @@
   border       : 1px solid transparent;
   transition   : all ease-out .2s;
   position     : relative;
+  margin       : 0px auto;
 
   .num {
     position : absolute;
@@ -255,9 +266,11 @@
   &.selected {
     background-color: @primaryColor;
     color           : #fff;
+    font-weight     : bold;
 
     .num {
-      color: @white80;
+      color      : @white80;
+      font-weight: normal;
     }
   }
 }
