@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
+    "@types/mockjs": "^1.0.2",
     "@umijs/preset-ui": "^2.0.10"
   }
 }
