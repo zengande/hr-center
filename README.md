@@ -3,6 +3,8 @@
 *UI参考[实习僧HR中心改版项目-YoyoChiang](https://www.ui.cn/detail/485995.html)*
 ## 页面
 ![image](./screenshorts/1.jpg)
+![image](./screenshorts/2.jpg)
+![image](./screenshorts/3.jpg)
 
 ## Getting Started
 
