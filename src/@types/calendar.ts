@@ -10,7 +10,8 @@ export interface CalendarModel extends CalendarInfo {
 export interface CalendarItem {
     time: string;
     name: string;
-    title: string
+    title: string;
+    avatar?: string;
 }
 
 export interface InterviewModel {

@@ -22,7 +22,7 @@ export default class InterviewList extends React.PureComponent<InterviewListProp
                             {
                                 item.list.map((_item, _index) => (
                                     <div key={_index} className={styles.item_content}>
-                                        <Avatar size={32} icon={<UserOutlined />} className={styles.content_avatar} />
+                                        <Avatar size={32} icon={<UserOutlined />} src={_item.avatar} alt="" className={styles.content_avatar} />
                                         <b className={styles.content_name}>{_item.name}</b>
                                         <span className={styles.content_title}>{_item.title}</span>
                                         <Button className={styles.content_message} type="link" icon={<MessageOutlined />} />

@@ -1,0 +1,52 @@
+@import '../../styles/colors.less';
+
+.container {
+    position: relative;
+
+    .list {
+        margin-right: 260px;
+
+        .item {
+            display     : inline-block;
+            font-weight : 600;
+            font-size   : .95rem;
+            margin-right: 40px;
+            color       : @contentColor;
+            cursor      : pointer;
+            transition  : all ease-out .2s;
+
+            &:after {
+                content         : '';
+                display         : block;
+                width           : 50%;
+                min-width       : 30px;
+                height          : 3px;
+                background-color: transparent;
+                margin          : 0px auto;
+                margin-top      : 3px;
+                border-radius   : 4px;
+                overflow        : hidden;
+                transition      : all ease-out .2s;
+            }
+
+            &:hover {
+                color: @titleColor;
+            }
+
+            &.checked {
+                color: @titleColor;
+            }
+
+            &.checked:after {
+                background-color: @primaryColor;
+            }
+        }
+    }
+
+    .search {
+        position: absolute;
+        top     : 0px;
+        right   : 0px;
+        width   : 260px;
+    }
+}

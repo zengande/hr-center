@@ -1,0 +1,94 @@
+@import '../styles/colors.less';
+
+.container {
+    .search {
+        margin-top      : 10px;
+        padding         : 24px;
+        background-color: #fff;
+
+        .title {
+            font-size: 1.5rem;
+            color    : @titleColor;
+        }
+    }
+
+    .content {
+        margin-top: 20px;
+
+        .list {
+            .item {
+                padding              : 24px;
+                background-color     : #fff;
+                display              : grid;
+                grid-template-columns: 80px auto;
+                margin-bottom        : 16px;
+
+                .avatar {
+                    width   : 70px;
+                    height  : 70px;
+                    position: relative;
+                }
+
+                .message {
+                    position        : absolute;
+                    cursor          : pointer;
+                    bottom          : 0px;
+                    right           : 0px;
+                    padding         : 5px;
+                    border-radius   : 15px;
+                    line-height     : 50%;
+                    background-color: #fff;
+                    text-align      : center;
+                    color           : @primaryColor;
+                    transition      : all ease-out .2s;
+
+                    &:hover {
+                        color: @primaryHoverColor;
+                    }
+                }
+
+                .description {
+                    padding-top: 5px;
+
+                    .name {
+                        font-size   : .95rem;
+                        margin-right: 10px;
+                        color       : @titleColor;
+                        font-weight : 600;
+                    }
+
+                    .position {
+                        color: @secondaryColor;
+                    }
+
+                    .time {
+                        float    : right;
+                        font-size: .8rem;
+                        color    : @tipColor;
+                    }
+
+                    .properties {
+                        margin-top: 5px;
+
+                        span {
+                            font-size: .85rem;
+
+                            &:after {
+                                content         : '';
+                                display         : inline-block;
+                                height          : 10px;
+                                width           : 2px;
+                                margin          : 0px 8px;
+                                background-color: @tipColor;
+                            }
+
+                            &:last-child:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

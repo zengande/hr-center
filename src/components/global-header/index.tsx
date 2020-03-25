@@ -25,16 +25,22 @@ const menus = [{
     text: '账号中心'
 }]
 
-export default class GlobalHeader extends React.PureComponent {
-    render() {
-        return (
+export interface GlobalHeaderProps {
+    pathname?: string;
+}
 
+export default class GlobalHeader extends React.PureComponent<GlobalHeaderProps> {
+    render() {
+        const { pathname = '/' } = this.props;
+
+        return (
             <Header>
                 <div className={styles.container}>
                     <div className={styles.logo} />
                     <Menu
                         theme="dark"
                         mode="horizontal"
+                        selectedKeys={[pathname]}
                         defaultSelectedKeys={['/']}
                         style={{ lineHeight: '64px' }}
                     >

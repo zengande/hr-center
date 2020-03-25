@@ -16,6 +16,12 @@ export default defineConfig({
       routes: [{
         path: '/',
         component: '@/pages/index.tsx'
+      },{
+        path:'/cvs',
+        component: '@/pages/CVs.tsx'
+      },{
+        path:'/cvs/:id',
+        component:'@/pages/CV.tsx'
       }]
     }
   ],
