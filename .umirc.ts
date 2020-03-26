@@ -5,7 +5,7 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/components/loading'
   },
-  exportStatic: { },
+  exportStatic: {},
   theme,
   locale: { antd: true },
   title: 'xx招聘HR中心',
@@ -16,12 +16,15 @@ export default defineConfig({
       routes: [{
         path: '/',
         component: '@/pages/index.tsx'
-      },{
-        path:'/cvs',
+      }, {
+        path: '/cvs',
         component: '@/pages/CVs.tsx'
-      },{
-        path:'/cvs/:id',
-        component:'@/pages/CV.tsx'
+      }, {
+        path: '/cvs/:id',
+        component: '@/pages/CV.tsx'
+      }, {
+        path: '/job-center',
+        component: '@/pages/job-center/index.tsx'
       }]
     }
   ],

@@ -1,0 +1,120 @@
+@import '../../styles/colors.less';
+
+.container {
+    .header {
+        padding         : 24px;
+        background-color: #fff;
+
+        .title {
+            color    : @titleColor;
+            font-size: 1.5rem;
+
+            .tip {
+                color      : @contentColor;
+                font-size  : .95rem;
+                margin-left: 15px;
+            }
+        }
+
+        .button {}
+    }
+
+    .content {
+        margin: 24px 0px;
+
+        .table {
+            .operations {
+                margin-bottom: 10px;
+            }
+
+            .thead {
+                display              : grid;
+                padding              : 10px 0px;
+                background-color     : #fff;
+                border               : 1px solid @white80;
+                grid-template-columns: 45px auto 100px 180px 80px 380px 180px;
+
+                .th {
+                    color: @contentColor;
+                }
+            }
+
+            .tbody {
+                .tcontent {
+                    margin-top      : 10px;
+                    border          : 1px solid @white80;
+                    background-color: #fff;
+
+                    .row {
+                        padding              : 24px 0px;
+                        display              : grid;
+                        grid-template-columns: 45px auto 100px 180px 80px 380px 180px;
+
+                        .col {
+                            &:first-child {
+                                padding-left: 10px;
+                            }
+
+                            &:nth-child(2) {
+                                color        : @titleColor;
+                                font-size    : .95rem;
+                                white-space  : nowrap;
+                                overflow     : hidden;
+                                max-width    : 300px;
+                                text-overflow: ellipsis;
+                            }
+
+                            &:nth-child(3),
+                            .gray {
+                                color: @contentColor;
+                            }
+
+                            a {
+                                color: @primaryHoverColor;
+                            }
+
+                            button {
+                                margin-right: 5px;
+                                color       : @primaryHoverColor;
+
+                                &:last-child {
+                                    margin-right: 0px;
+                                }
+                            }
+                        }
+                    }
+
+                    .statusbar {
+                        font-size       : .75rem;
+                        color           : @tipColor;
+                        padding         : 2px 0px;
+                        background-color: #fafafa;
+
+                        &.warning {
+                            background-color: #fff0c7;
+
+                            .status {
+                                color: #f5b024;
+                            }
+                        }
+
+                        .status {
+                            padding-left: 10px;
+                            display     : inline;
+                        }
+
+                        .time {
+                            float       : right;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .tfoot {
+                margin-top: 24px;
+                text-align: right;
+            }
+        }
+    }
+}

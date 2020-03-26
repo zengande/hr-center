@@ -12,7 +12,7 @@ const menus = [{
     href: '/cvs',
     text: '简历中心'
 }, {
-    href: '/jobs',
+    href: '/job-center',
     text: '职位中心'
 }, {
     href: '/search',
